@@ -1,0 +1,102 @@
+.sp1{
+    font-size:30px;
+    margin-right:60%;
+    margin-left:40px;
+}
+.sp2{
+    border-radius:70%;
+    font-size:40px; 
+    font-weight: bold; 
+    color:white;
+    background-color:black; 
+    padding-left:7px;
+    padding-right:7px;
+    padding-top:-3px;
+    padding-bottom:-3px;
+}
+.btn{
+    height:40px;
+    margin-left:20px;
+    width:100px;
+    margin-top:10px;
+    display:none;
+}
+.btn2{
+    height:40px;
+    margin-left:10px;
+    width:100px;
+    margin-top:10px;
+    display:none;
+}
+.ip1{
+    width:250px;
+    height:40px;
+    margin-left:50px;
+    display:none;
+}
+.ip2{
+    width:350px;
+    height:40px; 
+    margin-top:10px;
+    margin-left:50px;
+    display:none;
+}
+#date{
+    display:none;
+}
+li{
+    color:brown;
+    font-size:30px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    border:2px solid black;
+    padding:10px;
+    border-radius:5px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left:10px;
+    margin-bottom: 20px;
+}
+li div{
+    font-size:15px;
+    padding:5px;
+    border-radius:5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+    color:black;
+}
+li[input='checkbox']{
+    margin-left:30px;
+}
+li button{
+    width:70px;
+    height:30px;
+}
+li span{
+    width:70px;
+    height:30px;
+    margin-left:10px;
+    font-size:10px;
+    color:black;
+}
+#p1{
+    font-size:20px;
+    margin-left:40px;
+}
+#p2{
+    margin-left:40px;
+    font-size:20px;
+    display:none;
+}
+.btn1{
+    height:40px;
+    margin-left:20px;
+    width:100px;
+    margin-top:10px;
+    display:none;
+}
+.main
+{
+	margin-top:50px;
+	margin-left:
+}

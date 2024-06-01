@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>To-Do List</title>
+
+</head>
+<body>
+    <div class="main">
+        <span class="sp1">To-Do List</span>
+        <a href="#"><span class="sp2">+</span></a>
+    </div>
+  <span class="container">
+    <p id="p1">No Activities yet...</p>
+    <p id="p2">Your Activities goes here....</p>
+    <span class="innerdiv">
+    <input type="text" id="inputTextInputh" placeholder="Activity Name..." class="ip1">
+    <input type="button" class="btn1" id="cb1" value="ok" style="display:none">
+    <input type="text" id="inputTextInput" placeholder="Add Description..." class="ip2">
+    <input type="button" class="btn1" id="cb2" value="ok" style="display:none">
+    <input type="date" id="date" style="margin-left:40px;height:40px;" >
+    <button onclick="Add()" class="btn" >Add</button>
+    </span>
+    <ul id="inputTextList" style="list-style-type:none;"></ul>
+  </span>
+  <script>
+    $('.sp2').click(function(){
+        $('p').hide();
+        $('#cb1').fadeIn(1000);
+        $('.ip1').fadeIn(1000,function(){
+            $('#cb1').click(function(){
+            $('.ip1').fadeOut();
+            $('#cb1').fadeOut();
+            $('#cb2').fadeIn(2000);
+            $('.ip2').fadeIn(2000,function(){
+              $('#cb2').click(function(){
+                $('.ip2').hide();
+                $('#cb2').hide();
+                $('#date').fadeIn();
+                $('.btn').fadeIn();
+              })
+              });
+          });
+        });
+    });
+    $('.btn').click(function(){
+      $('#date').hide();
+      $('.btn').hide();
+      $('#p2').show();
+    })
+  function Add() {
+  var inputh=document.getElementById('inputTextInputh');
+  var input = document.getElementById('inputTextInput');
+  var curdate=new Date();
+  var date=new Date(document.getElementById('date').value);
+  var diff=Math.floor((date-curdate)/(1000*60*60*24));
+  console.log(diff);
+  var inputText = input.value;
+  const heading=inputh.value;
+  inputh.value="";
+  input.value = '';
+  if (inputText === '') {
+    alert('please enter the description');
+}
+    else{
+  var ul = document.getElementById('inputTextList');
+  var li = document.createElement('li');
+  var checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  /*checkbox.addEventListener('change', function() {
+    if (checkbox.checked) {
+      li.style.textDecoration = 'line-through'; 
+    } else {
+      li.style.textDecoration = 'none'; 
+    }
+  });*/
+
+
+  var deleteButton = document.createElement('button');
+  deleteButton.textContent = 'Delete';
+  deleteButton.addEventListener('click', function() {
+    if(checkbox.checked){
+    let confrm=confirm('are u sure to delete');
+    if(confrm==true){ul.removeChild(li);}}
+    else{
+        alert('click the checkbox');
+    }
+  });
+  const brk=document.createElement('br');
+  const para=document.createElement('div');
+  const text=document.createTextNode(inputText);
+  const div=document.createElement('span');
+  const difference=document.createTextNode(diff);
+  const text2=document.createTextNode('days to go');
+  div.appendChild(difference)
+  div.appendChild(text2);
+  para.appendChild(text);
+  para.appendChild(brk);
+  li.textContent = heading;
+  li.appendChild(para);
+  li.appendChild(brk);
+  li.appendChild(checkbox);
+  li.appendChild(div);
+  li.appendChild(brk);
+  li.appendChild(deleteButton);
+  ul.appendChild(li);
+}
+  }
+
+  </script>
+</body>
+</html>
